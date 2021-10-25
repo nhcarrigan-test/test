@@ -19,7 +19,7 @@ jobs:
               team_slug: "moderators",
               username: context.payload.pull_request.user.login
             });
-            console.log(isDev);
+            console.log(isDev.status);
             if (context.payload.pull_request.user.login !== "camperbot") {
               core.setFailed('This PR appears to touch translated curriculum files.')
               github.rest.issues.createComment({
