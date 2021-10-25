@@ -20,7 +20,7 @@ jobs:
               username: context.payload.pull_request.user.login
             });
             console.log(isDev.status);
-            if (context.payload.pull_request.user.login !== "camperbot") {
+            if (context.payload.pull_request.user.login !== "camperbot" && isDev.status !== 200) {
               core.setFailed('This PR appears to touch translated curriculum files.')
               github.rest.issues.createComment({
                 issue_number: context.issue.number,
