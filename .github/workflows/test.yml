@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/github-script@v5
         with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
+          github-token: ${{secrets.CAMPERBOT_NO_TRANSLATE}}
           script: |
             const isDev = github.rest.teams.getMembershipForUserInOrg({
               org: "nhcommunity",
